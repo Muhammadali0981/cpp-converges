@@ -7,20 +7,20 @@ using namespace std;
 
 int* sort(int* arr){
 
-    bool sorted;
-    for (int i = 0; i < 5; i++)
+    for (int i = 1; i < 5; i++)
     {   
-        sorted = true;
-        for(int j = 0; j < 4; j++){
-            if (arr[j] > arr[j+1]) swap(arr[j], arr[j+1]);
-            sorted = false;
+        int j = i - 1;
+        int key = arr[i];
+        while (j >= 0 && arr[j] > key)
+        {
+            arr[j+1] = arr[j];
+            j--;
 
         }
-
-        if (sorted) break;
+        arr[j+1] = key;
+        
     }
-    
-    return arr;
+return arr;
 }
 
 int main(int argc, char const *argv[])
